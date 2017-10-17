@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<!-- Mapper sql 쿼리문 저장 xml -->
+<mapper namespace="com.counselors.mapper.CounselorsMapper">
+
+	<!-- 리스트 -->
+	<select id="counselorList" resultType="com.counselors.domain.CounselorsVO">
+		select
+		* from counselors
+	</select>
+
+	<!-- 삽입 -->
+	<insert id="counselorInsert" parameterType="com.counselors.domain.CounselorsVO">
+		insert into counselors
+		values(
+		#{bno},#{title},#{register},#{password},#{contract},#{email},#{imagePath},now(),#{content})
+	</insert>
+
+	<!-- 삭제 -->
+	<delete id="counselorDelete" parameterType="int">
+	delete from counselors
+	where bno= #{bno}
+	</delete>
+	
+	<!-- 내용 수정 -->
+	<update id="counselorUpdate" parameterType="int">
+ 	update counselors set 
+ 	titlt=#{title},
+ 	contract=#{contract},
+ 	email=#{email},
+ 	imagePath=#{imagePath},
+ 	registeredTime=now(),
+ 	content=#{content} where bno=#{bno}
+	</update>
+	
+	<!-- 개별 조회 -->
+	<select id="counselorView" parameterType="int" resultType="com.counselors.domain.CounselorsVO">
+	select * from counselors where bno= #{bno}
+	</select>
+	
+	<!-- Bno 시퀸스 정렬 -->
+	
+
+
+
+
+</mapper>
+
