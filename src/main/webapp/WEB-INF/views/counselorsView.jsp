@@ -49,7 +49,7 @@
 				</tr>
 				<tr>
 					<td align="center"><input type="button" value="¼öÁ¤"
-						onclick='location.href="/counselors/${counselorVO.bno}"'></td>
+						onclick='location.href="/counselors/${counselorVO.bno}/${counselorVO.password}"' ></td>
 						
 					<td align="center">
 					<form:form action="/counselors/${counselorVO.bno}" method="DELETE">

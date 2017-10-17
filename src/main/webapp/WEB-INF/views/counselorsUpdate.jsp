@@ -7,6 +7,6 @@
 <title>게시물 수정</title>
 </head>
 <body>
-
+업뎃~
 </body>
 </html>

@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.boot.domain.BoardVO;
+ 
 import com.counselors.domain.CounselorsVO;
 import com.counselors.mapper.CounselorsMapper;
 
@@ -57,13 +56,13 @@ public class boardController {
 	}
 
 	// 글 수정 get
-	// 글 상세 정보
-	@RequestMapping(value = "/counselors/{bno}", method = RequestMethod.GET)
+	@RequestMapping(value = "/counselors/{bno}/{password}", method = RequestMethod.GET)
 	public ModelAndView counselorUpdate(@PathVariable("bno") int bno) throws Exception {
 		CounselorsVO counselorVO = conMapper.counselorView(bno);
 		return new ModelAndView("counselorsUpdate", "counselorVO", counselorVO);
 	}
-
+	
+/**
 	// 글 수정put
 	@RequestMapping(value = "/counselors/{bno}", method = RequestMethod.PUT)
 	public String Update(@ModelAttribute("CounselorsVO") CounselorsVO conVo, @PathVariable("bno") int bno)
@@ -71,5 +70,5 @@ public class boardController {
 		conMapper.counselorUpdate(conVo);
 		return "redirect://localhost:8080/counselors/";
 	}
-
+**/
 }
