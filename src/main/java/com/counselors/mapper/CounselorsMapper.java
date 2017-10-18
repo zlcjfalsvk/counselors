@@ -3,6 +3,7 @@ package com.counselors.mapper;
 import java.util.List;
 
 import com.counselors.domain.CounselorsVO;
+import com.counselors.domain.FileVO;
 
 public interface CounselorsMapper {
 	
@@ -23,5 +24,8 @@ public interface CounselorsMapper {
 	//게시물 상세 조회
 	public CounselorsVO counselorView(int bno) throws Exception;
 	 
+	//파일 삽입
+	public int fileInsert(FileVO file) throws Exception;
+	
 
 }

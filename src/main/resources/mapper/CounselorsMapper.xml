@@ -14,11 +14,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- 삽입 -->
-	<insert id="counselorInsert" parameterType="com.counselors.domain.CounselorsVO">
+	<insert id="counselorInsert" parameterType="com.counselors.domain.CounselorsVO"
+	useGeneratedKeys="true" keyProperty="bno">
 		insert into counselors
 		values(
-		#{bno},#{title},#{register},#{password},#{contract},#{email},#{imagePath},now(),#{content})
+		#{bno},#{title},#{register},#{password},#{contract},#{email},now(),#{content})
 	</insert>
+	
+	<!-- 파일 삽입 -->
+		<insert id="fileInsert" parameterType="com.counselors.domain.FileVO">
+		insert into files(fno,bno,filename,fileOriName,fileurl) values(
+		#{fno},#{bno},#{fileName},#{fileOriName},#{fileUrl}
+		)
+		</insert>
+	
 
 	<!-- 삭제 -->
 	<delete id="counselorDelete" parameterType="int">
@@ -32,7 +41,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	titlt=#{title},
  	contract=#{contract},
  	email=#{email},
- 	imagePath=#{imagePath},
  	registeredTime=now(),
  	content=#{content} where bno=#{bno}
 	</update>

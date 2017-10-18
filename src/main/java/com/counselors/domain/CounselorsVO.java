@@ -11,7 +11,6 @@ public class CounselorsVO {
 	private String password; // 게시물 비밀번호
 	private String contract; // 작성자 연락처
 	private String email; // 작성자 email
-	private String imagePath; // 첨부파일 저장 경로
 	private Date registeredTime; // 게시 시간
 	private String content; // 내용
 	
@@ -21,6 +20,7 @@ public class CounselorsVO {
 	public int getBno() {
 		return bno;
 	}
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -56,15 +56,6 @@ public class CounselorsVO {
 	public String getEmail() {
 		return  email;
 	}
-	
-	
-	public void setImagePath(String image) {
-		this.imagePath=image;
-	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	
 	
 	public void setRegisteredTime(Date date) {
 		this.registeredTime = date;

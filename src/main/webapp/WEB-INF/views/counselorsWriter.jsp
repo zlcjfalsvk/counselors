@@ -11,7 +11,7 @@
 <body>
 
 	<div style="padding: 30px,">
-		<form method="post" action="/counselors">
+		<form method="post" action="/counselors" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<div class="form-group">
@@ -47,7 +47,7 @@
 				<tr>
 					<div class="form-group">
 						<td><label>이미지 첨부</label></td>
-						<td><input type="text" name="imagePath" class="form-control"></td>
+						<td><input type="file" name="files"></td>
 					</div>
 				</tr>
 				<tr>
