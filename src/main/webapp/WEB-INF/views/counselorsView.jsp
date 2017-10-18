@@ -35,12 +35,12 @@
 						<td>${counselorVO.email}</td>
 					</div>
 				</tr>
-			<!--<tr>
+			<tr>
 					<div class="form-group">
 						<td><label>이미지 첨부</label></td>
-	 				<td>${counselorVO.imagePath}</td>  
+	 				<td>asdfsaf</td>  
 					</div>
-				</tr>-->
+				</tr>
 				<tr>
 					<div class="form-group">
 						<td><label>내용</label></td>
