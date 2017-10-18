@@ -22,5 +22,6 @@ public interface CounselorsMapper {
 	
 	//게시물 상세 조회
 	public CounselorsVO counselorView(int bno) throws Exception;
+	 
 
 }

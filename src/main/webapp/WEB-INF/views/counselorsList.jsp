@@ -58,9 +58,7 @@
 							</tbody>
 						</table>
 
-
-
-						<!-- 
+<!-- 
 						<div class="pagination">
 							<div class="paging" id="page1" page1="1" count1="1"
 								path1="&bs=&sf=all&ss=">
@@ -71,10 +69,9 @@
 								<a href="#none" class="page_last"><span class="hide">³¡</span></a>
 							</div>
 						</div>
-						 -->
-
-
-
+-->					
+						
+				
 					</div>
 				</div>
 				</section>

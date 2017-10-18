@@ -42,6 +42,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from counselors where bno= #{bno}
 	</select>
 	
+	
+	<!-- 페이지 갯수 -->
+	<select id="pageCounter">
+	select count(bno) from counselors;
+	</select>
+	
+	
+	
 	<!-- Bno 시퀸스 정렬 -->
 	
 

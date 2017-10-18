@@ -18,21 +18,26 @@ public class boardController {
 
 	@Autowired
 	private CounselorsMapper conMapper;
-
+	
 	// List 글목록
 	@RequestMapping(value = "/counselors/", method = RequestMethod.GET)
 	public ModelAndView counselorList() throws Exception {
+		
 		List<CounselorsVO> list = conMapper.counselorList();
 		return new ModelAndView("counselorsList", "list", list);
 
 	}
 
+	
+	
 	// 글 생성 페이지
 	@RequestMapping(value = "/counselors", method = RequestMethod.GET)
 	public ModelAndView counselorWrite() throws Exception {
 		return new ModelAndView("counselorsWriter");
 	}
 
+	
+	
 	// 글 작성
 	@RequestMapping(value = "/counselors", method = RequestMethod.POST)
 	public String write(@ModelAttribute("CounselorsVO") CounselorsVO con) throws Exception {
@@ -40,6 +45,9 @@ public class boardController {
 		return "redirect://localhost:8080/counselors/";
 
 	}
+	
+	
+	
 
 	// 글 상세 정보
 	@RequestMapping(value = "/counselors/{bno}", method = RequestMethod.GET)
@@ -47,6 +55,8 @@ public class boardController {
 		CounselorsVO counselorVO = conMapper.counselorView(bno);
 		return new ModelAndView("counselorsView", "counselorVO", counselorVO);
 	}
+	
+	
 
 	// 글 삭제
 	@RequestMapping(value = "/counselors/{bno}", method = RequestMethod.DELETE)
@@ -54,6 +64,8 @@ public class boardController {
 		conMapper.counselorDelete(bno);
 		return "redirect://localhost:8080/counselors/";
 	}
+	
+	
 
 	// 글 수정 get
 	@RequestMapping(value = "/counselors/{bno}/{password}", method = RequestMethod.GET)
@@ -62,7 +74,9 @@ public class boardController {
 		return new ModelAndView("counselorsUpdate", "counselorVO", counselorVO);
 	}
 	
-/**
+	
+	
+
 	// 글 수정put
 	@RequestMapping(value = "/counselors/{bno}", method = RequestMethod.PUT)
 	public String Update(@ModelAttribute("CounselorsVO") CounselorsVO conVo, @PathVariable("bno") int bno)
@@ -70,5 +84,5 @@ public class boardController {
 		conMapper.counselorUpdate(conVo);
 		return "redirect://localhost:8080/counselors/";
 	}
-**/
+
 }
